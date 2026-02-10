@@ -1,0 +1,37 @@
+{
+  "name": "gemini-newsflash",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run copy-htaccess",
+    "preview": "vite preview --host 0.0.0.0",
+    "build:preview": "npm run build && npm run preview",
+    "copy-htaccess": "copy .htaccess dist\\.htaccess 2>nul || cp .htaccess dist/.htaccess 2>/dev/null || echo .htaccess copied",
+    "copy-icons": "node scripts/copy-icons.js",
+    "generate-icons": "node scripts/generate-icons.js"
+  },
+  "dependencies": {
+    "@edgespark/client": "^1.0.3",
+    "@google/genai": "^1.39.0",
+    "lucide-react": "^0.344.0",
+    "mermaid": "^10.9.5",
+    "openai": "^6.17.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@edgespark/cli": "^0.0.9",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vite-plugin-pwa": "^0.20.5",
+    "workbox-window": "^7.1.0"
+  }
+}
